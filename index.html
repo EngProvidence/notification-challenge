@@ -1,0 +1,247 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">	
+	<style type="text/css">
+        .dot{background-color: red;
+        width: 8px;
+    height: 8px;
+    border-radius: 50%;}
+
+
+
+
+    .private:hover{background-color: gainsboro;}
+
+
+    #main{width:60% ;}
+
+
+     @media only screen and (max-width:500px){
+        #main{
+          
+          width: 97%!important;}
+      }
+      #all:hover{ color: blue;}
+
+
+      .card-title:hover{ color: blue;}
+
+
+
+      @media screen and (min-width: 501px) and (max-width: 700px){
+  #main{
+          
+          width: 90%;}
+      } 
+
+        /*===============================  */
+       
+	.message{color: rgb(25, 25, 221);
+    font-weight: bolder;}
+    .incoming{padding: 10px;
+    background-color: gainsboro
+    ; border-radius: 10px;}
+
+    .row{padding: 5px;
+
+    ; border-radius: 10px;}
+
+    #no{color: white;
+    background-color: blue;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  }
+	</style>
+
+<script src="jquery.js"></script>
+
+
+	<title>notification page</title>
+</head>
+<body style="background-color: gainsboro;">
+  
+    <div class=" border mx-auto  mt-5 rounded-3" style="background-color:white;
+    padding:40px; " id="main">
+    <!-- =============================================== -->
+    <div class="row  " style="background-color: transparent;">
+        <div class="col-7">
+            <h5 class="fw-bold">NOTIFICATIONS <input type="" value="3" name="" style="width: 30px;font-weight: bold;border: none;" id="no" ></h5>
+        </div>
+        <div class="col-5" style="text-align: right;">
+         <p id="all" role="button" >Mark all as read</p>
+        </div>
+<!-- ==================================================== -->
+
+    <div class="row border mt-3 incoming" id="id1">
+            <div class="col-2">
+                <img src="images/mark.webp" alt=""width="80%" >
+            </div>
+            <div class="col-10 ">
+             <p> <span class="card-title fw-bold " role="button" >  Mark Webber</span>
+                 reacted to your recent post<span class=" card-title" role="button"> My first tournament today! </span> <label class="dot" id="d1"></label> <br> 1m ago</p>
+            </div>
+            <!-- =================================== -->
+        </div> 
+        <div class="row border mt-3 incoming" id="id2">
+            <div class="col-2 mt-2">
+                <img src="images/angela.webp" alt="" width="80%">
+            </div>
+            <div class="col-10 mt-2">
+             <p> <span class="card-title fw-bold " role="button"> Angela Gray</span>
+                followed you! <label class="dot" id="d2"></label><br> 5m ago</p>
+            </div>
+
+    </div>
+   
+
+            <!-- ================================================= -->
+    <div class="row border mt-3 incoming" id="id3">
+        <div class="col-2">
+            <img src="images/jacob.webp" alt=""width="80%" >
+        </div>
+        <div class="col-10">
+         <p> <span class="card-title fw-bold " role="button">Jacob Thompson </span>
+            has joined your group<span class="message" role="button"> Chess Club </span> <label class="dot" id="d3"></label> <br> 1 day ago</p>
+        </div>
+    
+    </div>
+     <!--============================  -->
+     <div class="row  mt-3 ">
+        <div class="col-2">
+            <img src="images/rizky.webp" alt=""width="80%" >
+        </div>
+        <div class="col-10 ">
+         <p> <span class="card-title fw-bold " role="button"> Rizky Hasanuddin </span>
+            sent you a private message   <br> 5 days ago</p>
+        </div>
+    
+    </div>
+    <div class="row ">
+        <div class="col-2">
+            
+        </div>
+        <div class="col-10  border row private" role="button">
+         <p> Hello, thanks for setting up the Chess 
+            Club. I've been a member for a few weeks now 
+            and I'm already having lots of fun and improving my game. </p>
+        </div>
+    
+    </div> 
+
+
+
+
+        <!-- ================================================= -->
+        <div class="row  mt-3 ">
+            <div class="col-2">
+                <img src="images/kim.webp" alt=""width="80%" >
+            </div>
+            <div class="col-8 ">
+             <p> <span class="card-title fw-bold " role="button"> Kimberly Smith  </span>
+                commented on your picture  <br> 1 week ago</p>
+            </div>
+
+            <div class="col-2">
+            <a href="#">  <img src="images/chess.webp" alt=""width="" ></a>
+            </div>
+        
+        </div> 
+
+
+
+
+            <!-- ================================================= -->
+    <div class="row mt-3 ">
+        <div class="col-2">
+            <img src="images/nath.webp" alt=""width="80%" >
+        </div>
+        <div class="col-10 ">
+         <p> <span class="card-title fw-bold " role="button"> Nathan Peterson </span>
+            reacted to your recent post 5 end-game strategies to increase your win rate <br>2 weeks ago</p>
+        </div>
+    
+    </div> 
+
+
+
+        <!-- ================================================= -->
+        <div class="row  mt-3 ">
+            <div class="col-2">
+                <img src="images/anna.webp" alt=""width="80%" >
+            </div>
+            <div class="col-10 mt-3">
+             <p> <span class="card-title fw-bold " role="button">Anna Kim </span>
+                 left the group<span class="message" role="button"> Chess Club</span>  <br> 2 weeks ago</p>
+            </div>
+        
+        </div> 
+
+        <!-- =====================================================
+        ==========================================================
+        ============================ -->
+
+<script>
+    $(function () {
+     
+     var no = parseInt($("#no").val());
+
+          $("#all").click(function () {
+            $("#no").val('0');  
+             $(".dot").css('display','none')
+            $('.incoming').removeClass('border')
+            $('.incoming').removeClass('incoming') ;
+            $('#d1').attr('muted', true) ;
+          });  
+
+       $('.incoming').on("click", function () {
+        $(this).removeClass('incoming')
+        $(this).removeClass('border')
+       });
+
+     
+     
+   $('#id1').on("click", function () {
+    var no = parseInt($("#no").val());
+        
+        var no1= no-1;
+        $("#no").val(no1);
+
+        $("#d1").css('display','none')
+         $("#d1").attr('disabled',true)
+
+
+       });
+
+
+
+     $('#id2').on("click", function () {
+var no = parseInt($("#no").val());
+          no1 = no-1;
+        $("#no").val(no1);
+        $("#d2").css('display','none')
+       });
+
+ $('#id3').on("click", function () {
+var no = parseInt($("#no").val());
+        var no1= no-1;
+        $("#no").val(no1);     
+
+        $("#d3").css('display','none')
+       });
+    });
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
